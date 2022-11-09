@@ -1,18 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { AppState } from 'src/app/reducers';
+import { GameService } from 'src/app/services/game.service';
 import { miss, whack } from '../whack.actions';
+import { displayGame, isFirstGame } from '../whack.selectors';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss']
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent {
 
-  constructor(private store : Store<AppState>) { }
+  $displayGame : Observable<boolean> = this.store.pipe(
+    select(displayGame)
+  )
+  $isFirstGame : Observable<boolean> = this.store.pipe(
+    select(isFirstGame)
+  )
 
-  ngOnInit(): void {
+
+  constructor(private store : Store<AppState>, private gameService : GameService) { }
+
+
+  start(){
+    this.store.subscribe(console.log)
+    this.gameService.startGame()
   }
 
   click(){

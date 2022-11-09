@@ -8,7 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'whack-a-mole';
 
-  start(){
-    alert('comecei')
-  }
 }

@@ -1,4 +1,9 @@
-<div class="container">
+<div class="board" >
+  <div class="button" *ngIf="!($displayGame | async) as dp">
+    <button (click)="start()">{{dp === true ? "start" : "Play again"}}</button>
+  </div>
+  <div class="container">
+
     <div class="game-container">
       <div class="game-container__first-row">
         <div (click)="click()" class="hole hole-1"></div>
@@ -14,3 +19,4 @@
       
     </div>
   </div>
+</div>

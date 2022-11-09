@@ -12,7 +12,7 @@ import { BoardComponent } from './board/board.component';
   ],
   imports: [
     CommonModule,
-    StoreModule.forFeature(fromWhack.whackFeatureKey, fromWhack.whackReducer, { metaReducers: fromWhack.metaReducers })
+    StoreModule.forFeature(fromWhack.whackFeatureKey, fromWhack.whackReducer)
   ],
   exports: [BoardComponent]
 })
