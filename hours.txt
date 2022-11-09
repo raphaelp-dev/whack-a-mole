@@ -1,0 +1,3 @@
+- 2h not coding, with initial build and studying NgRx again, since I haven't worked with Vanilla NgRx for a year
+- 2h setting up NgRx, reducers and selectors, effects an initial template
+- 1h finishing the game template and final touches to reducer and intervals
