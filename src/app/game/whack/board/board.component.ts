@@ -66,7 +66,7 @@ export class BoardComponent {
       clearInterval(this.intervalManager)
       clearInterval(countdownInterval)
       this.score=0
-    }, 10000)
+    }, 30000)
 
   }
 
