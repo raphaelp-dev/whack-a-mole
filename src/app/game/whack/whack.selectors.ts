@@ -6,10 +6,19 @@ export const selectWhackState = createFeatureSelector<WhackState>("whack")
 
 export const displayGame = createSelector(
     selectWhackState,
-    (whack) => !!whack.displayGame
+    (whack) => whack.displayGame
 )
 
 export const isFirstGame = createSelector(
     selectWhackState,
-    (whack) => !!whack.isFirstGame
+    (whack) => whack.isFirstGame
+)
+
+export const score = createSelector(
+    selectWhackState,
+    whack => whack.score
+)
+export const highScore = createSelector(
+    selectWhackState,
+    whack => whack.highScore
 )

@@ -1,19 +1,24 @@
-<div class="board" >
-  <div class="button" *ngIf="!($displayGame | async) as dp">
-    <button (click)="start()">{{dp === true ? "start" : "Play again"}}</button>
+<div class="board">
+  <div class="button" *ngIf="!($displayGame | async)">
+    <button  (click)="start()">{{$getButtonLabel|async}}</button>
+  </div>
+  <div>
+    <p *ngIf="($displayGame|async)">Countdown: {{countdown}}s</p>
+    <p>Score : {{$score|async}}</p>
+    <p>High Score: {{$highScore|async}}</p>
   </div>
   <div class="container">
 
-    <div class="game-container">
+    <div *ngIf="$displayGame | async" id="game-container" (click)="click($event)" class="game-container">
       <div class="game-container__first-row">
-        <div (click)="click()" class="hole hole-1"></div>
-        <div (click)="miss()"  class="hole hole-2"></div>
-        <div class="hole hole-3"></div>
+        <div id="1" class="hole hole-1"></div>
+        <div id="2" class="hole hole-2"></div>
+        <div id="3" class="hole hole-3"></div>
       </div>
       <div class="game-container__second-row">
-        <div class="hole hole-4"></div>
-        <div class="hole hole-5"></div>
-        <div class="hole hole-6"></div>
+        <div id="4" class="hole hole-4"></div>
+        <div id="5" class="hole hole-5"></div>
+        <div id="6" class="hole hole-6"></div>
       </div>
   
       

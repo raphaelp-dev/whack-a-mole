@@ -12,7 +12,7 @@ constructor(private actions$: Actions) {}
     () =>
       this.actions$.pipe(
         ofType(WhackActions.startGame),
-        tap((action) => alert('Get ready!'))
+        tap((action) => console.log('Get ready!'))
       ),
     { dispatch: false }
   );
@@ -21,7 +21,7 @@ constructor(private actions$: Actions) {}
     () =>
       this.actions$.pipe(
         ofType(WhackActions.endGame),
-        tap((action) => alert('Time is up!'))
+        tap((action) => console.log('Time is up!'))
       ),
     { dispatch: false }
   );

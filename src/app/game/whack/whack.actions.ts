@@ -12,5 +12,6 @@ export const startGame = createAction(
     "[Board Page] Start Game"
 )
 export const endGame = createAction(
-    "[Board Page] End Game"
+    "[Board Page] End Game",
+    props<any>()
 )
