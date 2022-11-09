@@ -3,6 +3,7 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/reducers';
 import { GameService } from 'src/app/services/game.service';
+import { WhackActions } from '../actions-types';
 import { miss, whack } from '../whack.actions';
 import { displayGame, isFirstGame } from '../whack.selectors';
 
@@ -21,12 +22,12 @@ export class BoardComponent {
   )
 
 
-  constructor(private store : Store<AppState>, private gameService : GameService) { }
+  constructor(private store : Store<AppState>) { }
 
 
   start(){
-    this.store.subscribe(console.log)
-    this.gameService.startGame()
+    this.store.dispatch(WhackActions.startGame())
+    setTimeout(()=> this.store.dispatch(WhackActions.endGame()), 3000)
   }
 
   click(){

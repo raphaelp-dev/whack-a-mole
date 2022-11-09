@@ -8,6 +8,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { WhackModule } from './game/whack/whack.module';
 import { GameService } from './services/game.service';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { GameService } from './services/game.service';
       metaReducers
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    WhackModule
+    WhackModule,
+    EffectsModule.forRoot([])
   ],
   providers: [GameService],
   bootstrap: [AppComponent]

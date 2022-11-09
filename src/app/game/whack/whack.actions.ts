@@ -8,3 +8,9 @@ export const miss = createAction(
     "[Board Page] Whack Missed",
     props<any>()
 )
+export const startGame = createAction(
+    "[Board Page] Start Game"
+)
+export const endGame = createAction(
+    "[Board Page] End Game"
+)
