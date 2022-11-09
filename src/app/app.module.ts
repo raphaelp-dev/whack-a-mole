@@ -7,7 +7,6 @@ import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { WhackModule } from './game/whack/whack.module';
-import { GameService } from './services/game.service';
 import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
@@ -23,7 +22,6 @@ import { EffectsModule } from '@ngrx/effects';
     WhackModule,
     EffectsModule.forRoot([])
   ],
-  providers: [GameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

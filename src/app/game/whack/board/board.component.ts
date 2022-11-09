@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { map, Observable } from 'rxjs';
 import { AppState } from 'src/app/reducers';
-import { GameService } from 'src/app/services/game.service';
 import { WhackActions } from '../actions-types';
 import { miss, whack } from '../whack.actions';
 import { displayGame, highScore, isFirstGame, score } from '../whack.selectors';
